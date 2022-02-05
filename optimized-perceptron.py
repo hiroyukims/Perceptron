@@ -17,6 +17,7 @@ def calcOutput(register) :
     sum = register.dot(weights)
     return stepFunction(sum)
 
+# not optimized, only teaching purposes
 def train() : 
     totalErrors = 1
     while(totalErrors != 0) : 
