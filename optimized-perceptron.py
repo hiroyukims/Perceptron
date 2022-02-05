@@ -26,3 +26,5 @@ def train() :
             for j in range(len(weights)) : 
                 weights[j] = weights[j] + (larningRate * inputs[i][j] * error) 
     return 0
+
+train()
