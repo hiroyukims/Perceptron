@@ -14,6 +14,15 @@ def calcOutput(register) :
     sum = register.dot(weights)
     return stepFunction(sum)
 
-#todo: implement train function
 def train() : 
+    totalErrors = 1
+    while(totalErrors != 0) : 
+        totalErrors = 0
+        for i in range(len(outputs)) :
+            calculetedOutput = calcOutput(np.asarray(inputs[i]))
+            error = abs(outputs[i] - calculetedOutput)
+            totalErrors +=  error
+            # update weights
+            for j in range(len(weights)) : 
+                weights[j] = weights[j] + (larningRate * inputs[i][j] * error) 
     return 0
